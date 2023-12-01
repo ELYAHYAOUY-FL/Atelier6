@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Client Orders</title>
+</head>
+<body>
+    <h1>Client Information</h1>
+    <p>Client ID: {{ client.id }}</p>
+    <p>Client Name: {{ user._nom }}</p>
+    <p>Client Email: {{ user._login }}</p>
+
+    <h2>Orders</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Reference</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order.id }}</td>
+                <td>{{ order.getReferance() }}</td>
+                <td>{{ order.date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

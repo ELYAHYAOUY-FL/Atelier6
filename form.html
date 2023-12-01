@@ -1,0 +1,23 @@
+<!-- add_order.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Order</title>
+</head>
+<body>
+    <h1>Add Order for Client {{ client.id }}</h1>
+    <form method="POST" action="{{ url_for('add_order', client_id=client.id) }}">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.reference.label }} {{ form.reference(size=32) }}
+        </div>
+        <div>
+            {{ form.date.label }} {{ form.date() }}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+</body>
+</html>
